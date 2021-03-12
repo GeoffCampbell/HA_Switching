@@ -1,0 +1,112 @@
+
+# Configure a default setup of Home Assistant (frontend, api, etc)
+default_config:
+
+sensor:
+# Date sensor
+  - platform: time_date
+    display_options:
+      - 'date'
+
+# BST sensor
+binary_sensor:
+  - platform: template
+    sensors:
+      is_dst:
+        friendly_name: "BST"
+        entity_id: sensor.date
+        value_template: "{{ now().timetuple().tm_isdst > 0 }}"
+
+input_number:
+# Cost controls for big loads
+
+# Octopus information
+  octopus_cur_cost:
+    name: Octopus current cost
+    mode: box
+    initial: 25
+    step: 0.1
+    min: 0
+    max: 100
+    unit_of_measurement: "p/kWh"
+  octopus_min_cost:
+    name: Octopus min cost
+    mode: box
+    initial: 25
+    step: 0.1
+    min: 0
+    max: 100
+    unit_of_measurement: "p/kWh"
+
+# Tesla charging variables
+  tesla_min_slots:
+    name: Tesla charging time slots
+    mode: box
+    initial: 4
+    step: 1
+    min: 0
+    max: 24
+  tesla_threshold:
+    name: Tesla charging threshold cost
+    mode: box
+    initial: 10
+    step: 0.1
+    min: -100
+    max: 25
+    unit_of_measurement: "p/kWh"
+
+# Water heater variables
+  wh_min_slots:
+    name: Water heater time slots
+    mode: box
+    initial: 4
+    step: 1
+    min: 0
+    max: 24
+  wh_threshold:
+    name: Water heater threshold cost
+    mode: box
+    initial: 9
+    step: 0.1
+    min: -100
+    max: 15
+    unit_of_measurement: "p/kWh"
+
+input_datetime:
+# Timing controls for big loads
+  tesla_start_time:
+    name: Tesla start time
+    has_date: false
+    has_time: true
+    initial: 00:00
+  tesla_stop_time:
+    name: Tesla stop time
+    has_date: false
+    has_time: true
+    initial: 08:00
+
+  wh_start_time:
+    name: Water heater start time
+    has_date: false
+    has_time: true
+    initial: 00:00
+  wh_stop_time:
+    name: Water heater stop time
+    has_date: false
+    has_time: true
+    initial: 08:00
+
+input_boolean:
+  tesla_override:
+    name: Tesla override timing
+  wh_override:
+    name: Water heater override timing
+
+# Text to speech
+tts:
+  - platform: google_translate
+
+group: !include groups.yaml
+automation: !include automations.yaml
+script: !include scripts.yaml
+scene: !include scenes.yaml

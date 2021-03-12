@@ -1,0 +1,18 @@
+# Namespaces
+
+# Note: "module" is the source file, "Class" is the base class called when the module is loaded
+# 	params are parameters
+---
+
+TeslaSwitching:
+  module: Tesla
+  class: TeslaSwitching
+
+ImmersionSwitching:
+  module: Immersion
+  class: ImmersionSwitching
+
+OctopusAnalysis:
+  module: Octopus
+  class: OctopusAnalysis
+
