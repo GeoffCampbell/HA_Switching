@@ -1,5 +1,5 @@
 # HA_Switching
-AppDaemon project to switch big loads to track Octopus
+AppDaemon project to switch big electrical loads on and off to track Octopus billing rates.
 
 This is a set of Python routines to run under AppDaemon, in turn running under Home Assistant.  They allow the tracking of the Octopus Agile electricity rates, and pick the cheapest half-hourly slots within a defined time window to allow big electrical loads to run during the cheapest parts of the day.
 
