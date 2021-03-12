@@ -20,7 +20,8 @@ Once you are happy those pre-requisites are running properly, installation is so
 
 1) Add the contents of configuration.yaml to your existing configuration.yaml;
 2) Place the .py files in appdaemon/apps.  You should always have Octopus.py, to read the upcoming rates from the Octopus API, plus you may want one or both of the two switching programmes Immersion.py and Tesla.py, depending on requirements, or you might want to create others from those two;
-3) Add the contents of appdaemon/appdaemon.yaml to your existing appdaemon/appdaemon.yaml, modifying to reflect which modules you are using or have created;
-4) Create a directory appdaemon/logs if it's not there already;
-5) Restart Home Assistant;
-6) Optionally, create a new dashboard to given access to the new variables defined, so you can tweak the time window and number of slots required.
+3) Add the contents of appdaemon/apps/apps.yaml to your existing appdaemon/apps/apps.yaml, modifying to reflect which modules you are using or have created;
+4) Add the contents of appdaemon/appdaemon.yaml to your existing appdaemon/appdaemon.yaml, notably the log file definitions;
+5) Create a directory appdaemon/logs if it's not there already;
+6) Restart Home Assistant;
+7) Optionally, create a new dashboard to given access to the new variables defined, so you can tweak the time window and number of slots required.
