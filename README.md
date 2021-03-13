@@ -12,9 +12,9 @@ This project was used to teach myself Home Assistant and Python, so I make no re
 You will need:
 
 1) A working Home Assistant installation with whatever integrations your switches require;
-2) A working Octopus Agile account with functioning API access (see https://octopus.energy/dashboard/developer/)
+2) A working Octopus Agile account with functioning API access (see https://octopus.energy/dashboard/developer/);
 3) The AppDaemon add-on for HA (found in Supervisor|AddonStore);
-4) Optionally, the Samba Share SMB add-on from the same place;
+4) Optionally, the Samba Share SMB add-on from the same place.
 
 Once you are happy those pre-requisites are running properly, installation is something like this:
 
